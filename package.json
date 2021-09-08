@@ -1,0 +1,20 @@
+{
+  "name": "node_example",
+  "version": "1.0.0",
+  "main": "src/index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon",
+    "prisma:studio": "npx dotenv -e path/to/.env.local -- npx prisma studio"
+  },
+  "dependencies": {
+    "@prisma/client": "^2.30.0",
+    "apollo-server": "^3.2.0",
+    "graphql": "^15.5.1",
+    "nodemon": "^2.0.12"
+  },
+  "devDependencies": {
+    "dotenv-cli": "^4.0.0",
+    "prisma": "^2.30.0"
+  }
+}

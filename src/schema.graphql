@@ -1,0 +1,39 @@
+type Query {
+  getAllBugs: [Bug]
+}
+
+type Bug {
+  id: ID!
+  name: String!
+  location: String!
+  value: Int!
+  time: String!
+  monthsNorth: [Month]!
+  monthsSouth: [Month]!
+}
+
+enum Month {
+  January
+  February
+  March
+  April
+  May
+  June
+  July
+  August
+  September
+  October
+  November
+  December
+}
+
+type Mutation {
+  addBug(
+    name: String!
+    location: String!
+    value: Int!
+    time: String!
+    monthsNorth: [Month]!
+    monthsSouth: [Month]!
+  ): Bug
+}
