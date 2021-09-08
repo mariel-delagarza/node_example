@@ -13,6 +13,8 @@ services:
   node-backend:
     working_dir: /app
     restart: always
+    environment:
+      - DATABASE_URL=${DATABASE_URL}
     build:
       context: .
     volumes:
