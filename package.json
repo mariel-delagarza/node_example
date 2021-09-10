@@ -4,8 +4,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon",
-    "prisma:studio": "npx dotenv -e path/to/.env.local -- npx prisma studio"
+    "dev": "nodemon"
   },
   "dependencies": {
     "@prisma/client": "^2.30.0",
