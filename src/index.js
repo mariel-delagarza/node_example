@@ -14,16 +14,6 @@ const resolvers = {
       return context.prisma.fish.findMany();
     },
   },
-  Mutation: {
-    addBug: async (parent, args, context) => {
-      const bug = await context.prisma.bug.create({ data: { ...args } });
-      return bug;
-    },
-    addFish: async (parent, args, context) => {
-      const fish = await context.prisma.fish.create({ data: { ...args } });
-      return bug;
-    },
-  },
 };
 
 const server = new ApolloServer({

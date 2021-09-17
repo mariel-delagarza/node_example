@@ -60,31 +60,3 @@ enum HoursEnum {
   Eleven
   Twelve
 }
-
-type Mutation {
-  addBug(
-    id: ID!
-    name: String!
-    value: Int!
-    location: String!
-    hoursAM: [HoursEnum!]
-    hoursPM: [HoursEnum!]
-    time_range: String!
-    monthsNorth: [MonthEnum!]
-    monthsSouth: [MonthEnum!]
-  ): Bug
-
-  addFish(
-    id: ID!
-    name: String!
-    shadowSize: String!
-    notes: String!
-    value: Int!
-    location: String!
-    hoursAM: [HoursEnum!]
-    hoursPM: [HoursEnum!]
-    time_range: String!
-    monthsNorth: [MonthEnum!]
-    monthsSouth: [MonthEnum!]
-  ): Fish
-}
