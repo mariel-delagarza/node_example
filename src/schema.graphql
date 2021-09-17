@@ -1,18 +1,37 @@
 type Query {
   getAllBugs: [Bug]
+  getAllFish: [Fish]
+  getBug(id: ID!): Bug!
+  getFish(id: ID!): Fish!
 }
 
 type Bug {
   id: ID!
   name: String!
-  location: String!
   value: Int!
-  time: String!
-  monthsNorth: [Month]!
-  monthsSouth: [Month]!
+  location: String!
+  hoursAM: [HoursEnum!]
+  hoursPM: [HoursEnum!]
+  time_range: String!
+  monthsNorth: [MonthEnum!]
+  monthsSouth: [MonthEnum!]
 }
 
-enum Month {
+type Fish {
+  id: ID!
+  name: String!
+  shadowSize: Int!
+  fin: Boolean!
+  value: Int!
+  location: String!
+  hoursAM: [HoursEnum!]
+  hoursPM: [HoursEnum!]
+  time_range: String!
+  monthsNorth: [MonthEnum!]
+  monthsSouth: [MonthEnum!]
+}
+
+enum MonthEnum {
   January
   February
   March
@@ -27,13 +46,45 @@ enum Month {
   December
 }
 
+enum HoursEnum {
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
+  Nine
+  Ten
+  Eleven
+  Twelve
+}
+
 type Mutation {
   addBug(
+    id: ID!
     name: String!
-    location: String!
     value: Int!
-    time: String!
-    monthsNorth: [Month]!
-    monthsSouth: [Month]!
+    location: String!
+    hoursAM: [HoursEnum!]
+    hoursPM: [HoursEnum!]
+    time_range: String!
+    monthsNorth: [MonthEnum!]
+    monthsSouth: [MonthEnum!]
   ): Bug
+
+  addFish(
+    id: ID!
+    name: String!
+    shadowSize: String!
+    notes: String!
+    value: Int!
+    location: String!
+    hoursAM: [HoursEnum!]
+    hoursPM: [HoursEnum!]
+    time_range: String!
+    monthsNorth: [MonthEnum!]
+    monthsSouth: [MonthEnum!]
+  ): Fish
 }

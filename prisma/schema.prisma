@@ -12,16 +12,32 @@ generator client {
 }
 
 model Bug {
-  id String @id @unique @default(uuid()) @db.Uuid
+  id String @id @default(uuid())
   name String @unique
-  location String 
-  value Int 
-  time String 
-  monthsNorth Month[]
-  monthsSouth Month[]
+  value Int
+  location String
+  hoursAM HoursEnum[]
+  hoursPM HoursEnum[]
+  time_range String
+  monthsNorth MonthEnum[]
+  monthsSouth MonthEnum[]
 }
 
-enum Month {
+model Fish {
+  id String @id @default(uuid()) 
+  name String @unique
+  shadowSize Int
+  fin Boolean
+  value Int
+  location String
+  hoursAM HoursEnum[]
+  hoursPM HoursEnum[]
+  time_range String
+  monthsNorth MonthEnum[]
+  monthsSouth MonthEnum[]
+}
+
+enum MonthEnum {
   January
   February
   March
@@ -34,4 +50,19 @@ enum Month {
   October
   November
   December
+}
+
+enum HoursEnum {
+  One
+  Two
+  Three
+  Four
+  Five
+  Six
+  Seven
+  Eight
+  Nine
+  Ten
+  Eleven
+  Twelve
 }

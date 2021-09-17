@@ -5,49 +5,22 @@ const path = require("path");
 
 const prisma = new PrismaClient();
 
-/*const bugs = [
-  {
-    name: "Common Butterfly",
-    location: "Flying",
-    value: 160,
-    time: "4 a.m. - 7 p.m.",
-    monthsNorth: [
-      "September",
-      "October",
-      "November",
-      "December",
-      "January",
-      "February",
-      "March",
-      "April",
-      "May",
-      "June",
-    ],
-    monthsSouth: [
-      "March",
-      "April",
-      "May",
-      "June",
-      "July",
-      "August",
-      "September",
-      "October",
-      "November",
-      "December",
-    ],
-  },
-];
-*/
-
 const resolvers = {
   Query: {
     getAllBugs: async (parent, args, context) => {
       return context.prisma.bug.findMany();
     },
+    getAllFish: async (parent, args, context) => {
+      return context.prisma.fish.findMany();
+    },
   },
   Mutation: {
     addBug: async (parent, args, context) => {
       const bug = await context.prisma.bug.create({ data: { ...args } });
+      return bug;
+    },
+    addFish: async (parent, args, context) => {
+      const fish = await context.prisma.fish.create({ data: { ...args } });
       return bug;
     },
   },
