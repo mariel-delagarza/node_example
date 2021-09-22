@@ -196,7 +196,6 @@ const resolvers = {
 
 const app = express();
 
-let server = null;
 async function startServer() {
   const server = new ApolloServer({
     typeDefs: readFileSync(path.join(__dirname, "schema.graphql"), "utf-8"),
@@ -209,10 +208,10 @@ async function startServer() {
   server.applyMiddleware({ app });
 }
 
-//server.listen().then(({ url }) => console.log(`Server is running on ${url}`));
+startServer();
 
 app.get("/", (req, res) => res.end("Congrats you made it."));
-//app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
+app.get("/playground", expressPlayground({ endpoint: "/graphql" }));
 
 app.listen({ port: 4000 }, () =>
   console.log(`Server running at http://localhost:4000`)
