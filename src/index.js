@@ -176,9 +176,6 @@ const resolvers = {
   },
 };
 
-// Find by time-interval + month + hemisphere
-//SELECT * FROM Bugs WHERE time_range="4am - 5pm" AND monthsNorth IN ('January')
-
 const server = new ApolloServer({
   typeDefs: readFileSync(path.join(__dirname, "schema.graphql"), "utf-8"),
   resolvers,
