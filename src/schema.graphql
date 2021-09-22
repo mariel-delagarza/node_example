@@ -27,6 +27,9 @@ type Query {
 
   getBugsByTimeRangeMonthSouth(time_range: String!, month: String!): [Bug]!
   getFishByTimeRangeMonthSouth(time_range: String!, month: String!): [Fish]!
+
+  getBugsByLocation(location: String!): [Bug!]
+  getFishByLocation(location: String!): [Fish!]
 }
 
 type Bug {

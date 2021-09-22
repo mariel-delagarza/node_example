@@ -173,6 +173,20 @@ const resolvers = {
 
       return fish;
     },
+    getBugsByLocation: async (parent, args, context) => {
+      const bugs = await context.prisma.bug.findMany({
+        where: { location: args.location },
+      });
+
+      return bugs;
+    },
+    getFishByLocation: async (parent, args, context) => {
+      const fish = await context.prisma.fish.findMany({
+        where: { location: args.location },
+      });
+
+      return fish;
+    },
   },
 };
 
