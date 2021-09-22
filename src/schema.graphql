@@ -1,8 +1,32 @@
 type Query {
   getAllBugs: [Bug]
   getAllFish: [Fish]
-  getBug(id: ID!): Bug!
-  getFish(id: ID!): Fish!
+  getBugByName(name: String!): Bug!
+  getFishByName(name: String!): Fish!
+
+  getBugsByMonthNorth(month: String!): [Bug]!
+  getFishByMonthNorth(month: String!): [Fish]!
+
+  getBugsByMonthSouth(month: String!): [Bug]!
+  getFishByMonthSouth(month: String!): [Fish]!
+
+  getBugsByAmHourMonthNorth(month: String!, hour: String!): [Bug]!
+  getBugsByAmHourMonthSouth(month: String!, hour: String!): [Bug]!
+
+  getFishByAmHourMonthNorth(month: String!, hour: String!): [Fish]!
+  getFishByAmHourMonthSouth(month: String!, hour: String!): [Fish]!
+
+  getBugsByPmHourMonthNorth(month: String!, hour: String!): [Bug]!
+  getBugsByPmHourMonthSouth(month: String!, hour: String!): [Bug]!
+
+  getFishByPmHourMonthNorth(month: String!, hour: String!): [Fish]!
+  getFishByPmHourMonthSouth(month: String!, hour: String!): [Fish]!
+
+  getBugsByTimeRangeMonthNorth(time_range: String!, month: String!): [Bug]!
+  getFishByTimeRangeMonthNorth(time_range: String!, month: String!): [Fish]!
+
+  getBugsByTimeRangeMonthSouth(time_range: String!, month: String!): [Bug]!
+  getFishByTimeRangeMonthSouth(time_range: String!, month: String!): [Fish]!
 }
 
 type Bug {
