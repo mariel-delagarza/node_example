@@ -3,6 +3,8 @@ type Query {
   getAllFish: [Fish]
   getBugByName(name: String!): Bug!
   getFishByName(name: String!): Fish!
+  getBugBySlug(slug: String!): Bug!
+  getFishBySlug(slug: String!): Fish!
 
   getBugsByMonthNorth(month: String!): [Bug]!
   getFishByMonthNorth(month: String!): [Fish]!
@@ -35,6 +37,7 @@ type Query {
 type Bug {
   id: ID!
   name: String!
+  slug: String!
   value: Int!
   location: String!
   hoursAM: [HoursEnum!]
@@ -47,6 +50,7 @@ type Bug {
 type Fish {
   id: ID!
   name: String!
+  slug: String!
   shadowSize: Int!
   fin: Boolean!
   value: Int!

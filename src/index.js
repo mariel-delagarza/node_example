@@ -23,6 +23,12 @@ const resolvers = {
     getFishByName: async (parent, args, context) => {
       return context.prisma.fish.findUnique({ where: { name: args.name } });
     },
+    getBugBySlug: async (parent, args, context) => {
+      return context.prisma.bug.findUnique({ where: { slug: args.slug } });
+    },
+    getFishBySlug: async (parent, args, context) => {
+      return context.prisma.fish.findUnique({ where: { slug: args.slug } });
+    },
     getBugsByMonthNorth: async (parent, args, context) => {
       const bugs = await context.prisma.bug.findMany({
         where: { monthsNorth: { has: args.month } },
